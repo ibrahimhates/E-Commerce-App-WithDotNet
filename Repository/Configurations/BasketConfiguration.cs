@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Repository.Configurations
 {
-    public class BasketConfiguration : IEntityTypeConfiguration<Basket>
+    public class BasketConfiguration : IEntityTypeConfiguration<Cart>
     {
-        public void Configure(EntityTypeBuilder<Basket> builder)
+        public void Configure(EntityTypeBuilder<Cart> builder)
         {
             builder.HasKey(x => x.UserId);
          
@@ -16,7 +16,7 @@ namespace Repository.Configurations
 
             builder.HasOne(x => x.User)
                    .WithOne(x => x.Basket)
-                   .HasForeignKey<Basket>(x => x.UserId);
+                   .HasForeignKey<Cart>(x => x.UserId);
         }
     }
 }

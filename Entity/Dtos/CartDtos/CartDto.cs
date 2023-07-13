@@ -1,12 +1,12 @@
 ﻿
 using Entity.Models;
 
-namespace Entity.Dtos.BasketDtos
+namespace Entity.Dtos.CartDtos
 {
-    public record BasketDto
+    public record CartDto
     {
         public int UserId { get; init; }
         public decimal Total { get; init; }
-        public ICollection<ProductBasket> Products { get; init; }
+        public ICollection<ProductCart> Products { get; init; }
     }
 }

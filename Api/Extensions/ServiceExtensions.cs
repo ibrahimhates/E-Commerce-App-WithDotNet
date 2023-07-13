@@ -43,7 +43,7 @@ namespace Api.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
-            services.AddScoped<IBasketRepository, BasketRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
             services.AddScoped<IProductOrderRepository, ProductOrderRepository>();
             services.AddScoped<IProductBasketRepository, ProductBasketRepository>();
         }

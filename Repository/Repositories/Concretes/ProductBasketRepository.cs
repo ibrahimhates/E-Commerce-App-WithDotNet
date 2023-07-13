@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Repository.Repositories.Concretes
 {
     public class ProductBasketRepository :
-        GenericRepositoryBase<ProductBasket>, IProductBasketRepository
+        GenericRepositoryBase<ProductCart>, IProductBasketRepository
     {
         public ProductBasketRepository(ETContext context) : base(context)
         {

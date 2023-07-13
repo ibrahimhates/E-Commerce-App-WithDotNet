@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories.Concretes
 {
-    public class BasketRepository : GenericRepositoryBase<Basket>, IBasketRepository
+    public class CartRepository : GenericRepositoryBase<Cart>, ICartRepository
     {
-        public BasketRepository(ETContext context) : base(context)
+        public CartRepository(ETContext context) : base(context)
         {
         }
 
-        public async Task<Basket?> GetBasketAsync(int id, bool trackChanges) =>
+        public async Task<Cart?> GetCartAsync(int id, bool trackChanges) =>
             await GetByCondition(x => x.UserId == id, trackChanges)
+            .Include(x => x.Products)
+                .ThenInclude(x => x.Product)
             .SingleOrDefaultAsync();
     }
 }

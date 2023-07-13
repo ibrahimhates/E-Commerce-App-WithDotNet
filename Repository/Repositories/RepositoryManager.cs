@@ -10,13 +10,13 @@ namespace Repository.Repositories
         private readonly ICategoryRepository _categoryRepository;
         private readonly IAddressRepository _addressRepository;
         private readonly IOrderRepository _orderRepository;
-        private readonly IBasketRepository _basketRepository;
+        private readonly ICartRepository _basketRepository;
         private readonly IProductOrderRepository _productOrderRepository;
         private readonly IProductBasketRepository _productBasketRepository;
         public RepositoryManager(
             IProductRepository productRepository, ICategoryRepository categoryRepository,
             IAddressRepository addressRepository, IOrderRepository orderRepository,
-            IBasketRepository basketRepository, IProductOrderRepository productOrderRepository,
+            ICartRepository basketRepository, IProductOrderRepository productOrderRepository,
             IProductBasketRepository productBasketRepository, IUnitOfWork unitOfWork)
         {
             _productRepository=productRepository;
@@ -37,7 +37,7 @@ namespace Repository.Repositories
 
         public IOrderRepository OrderRepository => _orderRepository;
 
-        public IBasketRepository BasketRepository => _basketRepository;
+        public ICartRepository BasketRepository => _basketRepository;
 
         public IProductOrderRepository ProductOrderRepository => _productOrderRepository;
 

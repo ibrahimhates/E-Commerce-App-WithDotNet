@@ -11,7 +11,7 @@ namespace Entity.Models
         public DateTime CreatedDate { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public ICollection<ProductBasket>? Baskets { get; set; }
+        public ICollection<ProductCart>? Baskets { get; set; }
         public ICollection<ProductOrder>? Orders { get; set; }
 
     }

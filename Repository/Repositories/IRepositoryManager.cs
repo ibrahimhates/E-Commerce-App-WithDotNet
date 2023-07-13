@@ -9,7 +9,7 @@ namespace Repository.Repositories
         ICategoryRepository CategoryRepository { get; }
         IAddressRepository AddressRepository { get; }
         IOrderRepository OrderRepository { get; }
-        IBasketRepository BasketRepository { get; }
+        ICartRepository BasketRepository { get; }
         IProductOrderRepository ProductOrderRepository { get; }
         IProductBasketRepository ProductBasketRepository { get; }
         Task SaveAsync();

@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 
 namespace Repository.SeedData
 {
-    public class ProductBasketSeed : IEntityTypeConfiguration<ProductBasket>
+    public class ProductBasketSeed : IEntityTypeConfiguration<ProductCart>
     {
-        public void Configure(EntityTypeBuilder<ProductBasket> builder)
+        public void Configure(EntityTypeBuilder<ProductCart> builder)
         {
-            var productBaskets = new List<ProductBasket>()
+            var productBaskets = new List<ProductCart>()
             {
-                new ProductBasket(){BasketId = 1,ProductId = 33},
-                new ProductBasket(){BasketId = 1,ProductId = 54},
-                new ProductBasket(){BasketId = 1,ProductId = 55},
-                new ProductBasket(){BasketId = 1,ProductId = 22},
-                new ProductBasket(){BasketId = 2,ProductId = 152},
-                new ProductBasket(){BasketId = 2,ProductId = 88},
-                new ProductBasket(){BasketId = 2,ProductId = 33}
+                new ProductCart(){BasketId = 1,ProductId = 33},
+                new ProductCart(){BasketId = 1,ProductId = 54},
+                new ProductCart(){BasketId = 1,ProductId = 55},
+                new ProductCart(){BasketId = 1,ProductId = 22},
+                new ProductCart(){BasketId = 2,ProductId = 152},
+                new ProductCart(){BasketId = 2,ProductId = 88},
+                new ProductCart(){BasketId = 2,ProductId = 33}
             };
             builder.HasData(productBaskets);
         }

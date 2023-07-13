@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Repository.Configurations
 {
-    public class ProductBasketConfiguration : IEntityTypeConfiguration<ProductBasket>
+    public class ProductBasketConfiguration : IEntityTypeConfiguration<ProductCart>
     {
-        public void Configure(EntityTypeBuilder<ProductBasket> builder)
+        public void Configure(EntityTypeBuilder<ProductCart> builder)
         {
             builder.HasKey(x => new { x.ProductId, x.BasketId });
 
