@@ -8,6 +8,6 @@ namespace Service.Abstracts.Auth
     {
         Task<IdentityResult> RegisterUserAsync(UserForRegistrationDto userForRegistrationDto);
         Task<bool> ValidateUserAsync(UserForAuthenticationDto userForAuthDto);
-        string CreateToken();
+        Task<string> CreateTokenAsync();
     }
 }

@@ -1,4 +1,4 @@
-﻿using Entity.Models;
+﻿using Entity.Dtos.CategoryDtos;
 
 namespace Entity.Dtos.ProductDtos
 {
@@ -11,6 +11,6 @@ namespace Entity.Dtos.ProductDtos
         public bool StockStatus { get; init; }
         public DateTime CreatedDate { get; init; }
         public int CategoryId { get; init; }
-        public Category Category { get; init; }
+        public CategoryDto Category { get; init; }
     }
 }

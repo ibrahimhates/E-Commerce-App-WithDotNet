@@ -12,7 +12,7 @@ using Repository;
 namespace Api.Migrations
 {
     [DbContext(typeof(ETContext))]
-    [Migration("20230711165023__init")]
+    [Migration("20230714140455__init")]
     partial class _init
     {
         /// <inheritdoc />
@@ -52,7 +52,7 @@ namespace Api.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Entity.Models.Basket", b =>
+            modelBuilder.Entity("Entity.Models.Cart", b =>
                 {
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -285,7 +285,7 @@ namespace Api.Migrations
                             Id = 1,
                             AddressId = 1,
                             DeliveryStatus = false,
-                            OrderDate = new DateTime(2023, 7, 9, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1018),
+                            OrderDate = new DateTime(2023, 7, 12, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4307),
                             PaymentStatus = false,
                             TotalAmount = 100m,
                             UserId = 1
@@ -295,7 +295,7 @@ namespace Api.Migrations
                             Id = 2,
                             AddressId = 2,
                             DeliveryStatus = false,
-                            OrderDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1036),
+                            OrderDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4327),
                             PaymentStatus = true,
                             TotalAmount = 100m,
                             UserId = 2
@@ -305,7 +305,7 @@ namespace Api.Migrations
                             Id = 3,
                             AddressId = 2,
                             DeliveryStatus = true,
-                            OrderDate = new DateTime(2023, 7, 6, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1038),
+                            OrderDate = new DateTime(2023, 7, 9, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4328),
                             PaymentStatus = true,
                             TotalAmount = 100m,
                             UserId = 2
@@ -353,1805 +353,1805 @@ namespace Api.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1570),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4697),
                             Description = "Description 1",
                             Name = "Product 1",
-                            Price = 4609m,
+                            Price = 9895m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1579),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4706),
                             Description = "Description 2",
                             Name = "Product 2",
-                            Price = 5049m,
+                            Price = 5079m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1582),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4708),
                             Description = "Description 3",
                             Name = "Product 3",
-                            Price = 3813m,
+                            Price = 3390m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1583),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4710),
                             Description = "Description 4",
                             Name = "Product 4",
-                            Price = 7066m,
+                            Price = 485m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 5,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1585),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4711),
                             Description = "Description 5",
                             Name = "Product 5",
-                            Price = 8550m,
+                            Price = 625m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 6,
                             CategoryId = 6,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1588),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4714),
                             Description = "Description 6",
                             Name = "Product 6",
-                            Price = 9413m,
+                            Price = 6033m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 7,
                             CategoryId = 7,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1590),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4716),
                             Description = "Description 7",
                             Name = "Product 7",
-                            Price = 2768m,
+                            Price = 2600m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 8,
                             CategoryId = 8,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1591),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4717),
                             Description = "Description 8",
                             Name = "Product 8",
-                            Price = 8290m,
+                            Price = 6717m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 9,
                             CategoryId = 9,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1593),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4719),
                             Description = "Description 9",
                             Name = "Product 9",
-                            Price = 1655m,
+                            Price = 8095m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 10,
                             CategoryId = 10,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1596),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4721),
                             Description = "Description 10",
                             Name = "Product 10",
-                            Price = 5885m,
+                            Price = 3716m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 11,
                             CategoryId = 11,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1692),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4723),
                             Description = "Description 11",
                             Name = "Product 11",
-                            Price = 6046m,
+                            Price = 3967m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 12,
                             CategoryId = 12,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1694),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4724),
                             Description = "Description 12",
                             Name = "Product 12",
-                            Price = 473m,
+                            Price = 4489m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 13,
                             CategoryId = 13,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1695),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4725),
                             Description = "Description 13",
                             Name = "Product 13",
-                            Price = 4996m,
+                            Price = 379m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 14,
                             CategoryId = 14,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1697),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4727),
                             Description = "Description 14",
                             Name = "Product 14",
-                            Price = 1461m,
+                            Price = 535m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 15,
                             CategoryId = 15,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1699),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4729),
                             Description = "Description 15",
                             Name = "Product 15",
-                            Price = 1147m,
+                            Price = 3295m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 16,
                             CategoryId = 16,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1700),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4730),
                             Description = "Description 16",
                             Name = "Product 16",
-                            Price = 2205m,
+                            Price = 3681m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 17,
                             CategoryId = 17,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1702),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4732),
                             Description = "Description 17",
                             Name = "Product 17",
-                            Price = 7761m,
+                            Price = 9326m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 18,
                             CategoryId = 18,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1705),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4951),
                             Description = "Description 18",
                             Name = "Product 18",
-                            Price = 6679m,
+                            Price = 8234m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 19,
                             CategoryId = 19,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1706),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4953),
                             Description = "Description 19",
                             Name = "Product 19",
-                            Price = 6386m,
+                            Price = 5832m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 20,
                             CategoryId = 20,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1708),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4955),
                             Description = "Description 20",
                             Name = "Product 20",
-                            Price = 2386m,
+                            Price = 3288m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 21,
                             CategoryId = 21,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1709),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4957),
                             Description = "Description 21",
                             Name = "Product 21",
-                            Price = 3937m,
+                            Price = 9766m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 22,
                             CategoryId = 22,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1711),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4958),
                             Description = "Description 22",
                             Name = "Product 22",
-                            Price = 3732m,
+                            Price = 9430m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 23,
                             CategoryId = 23,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1712),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4960),
                             Description = "Description 23",
                             Name = "Product 23",
-                            Price = 1217m,
+                            Price = 4848m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 24,
                             CategoryId = 24,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1714),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4962),
                             Description = "Description 24",
                             Name = "Product 24",
-                            Price = 5450m,
+                            Price = 2662m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 25,
                             CategoryId = 25,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1716),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4964),
                             Description = "Description 25",
                             Name = "Product 25",
-                            Price = 5900m,
+                            Price = 2491m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 26,
                             CategoryId = 26,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1717),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4966),
                             Description = "Description 26",
                             Name = "Product 26",
-                            Price = 8646m,
+                            Price = 5233m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 27,
                             CategoryId = 27,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1719),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4968),
                             Description = "Description 27",
                             Name = "Product 27",
-                            Price = 8165m,
+                            Price = 9256m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 28,
                             CategoryId = 28,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1720),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4969),
                             Description = "Description 28",
                             Name = "Product 28",
-                            Price = 8769m,
+                            Price = 4785m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 29,
                             CategoryId = 29,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1722),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4971),
                             Description = "Description 29",
                             Name = "Product 29",
-                            Price = 7194m,
+                            Price = 3982m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 30,
                             CategoryId = 30,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1723),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4973),
                             Description = "Description 30",
                             Name = "Product 30",
-                            Price = 9804m,
+                            Price = 6895m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 31,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1725),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4975),
                             Description = "Description 31",
                             Name = "Product 31",
-                            Price = 9106m,
+                            Price = 2568m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 32,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1726),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4976),
                             Description = "Description 32",
                             Name = "Product 32",
-                            Price = 6912m,
+                            Price = 8211m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 33,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1728),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4978),
                             Description = "Description 33",
                             Name = "Product 33",
-                            Price = 8874m,
+                            Price = 9884m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 34,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1731),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4981),
                             Description = "Description 34",
                             Name = "Product 34",
-                            Price = 9408m,
+                            Price = 8703m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 35,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1732),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4983),
                             Description = "Description 35",
                             Name = "Product 35",
-                            Price = 2178m,
+                            Price = 9298m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 36,
                             CategoryId = 6,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1734),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4984),
                             Description = "Description 36",
                             Name = "Product 36",
-                            Price = 3150m,
+                            Price = 7104m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 37,
                             CategoryId = 7,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1735),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4986),
                             Description = "Description 37",
                             Name = "Product 37",
-                            Price = 1362m,
+                            Price = 9042m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 38,
                             CategoryId = 8,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1736),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4987),
                             Description = "Description 38",
                             Name = "Product 38",
-                            Price = 7724m,
+                            Price = 7211m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 39,
                             CategoryId = 9,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1738),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4989),
                             Description = "Description 39",
                             Name = "Product 39",
-                            Price = 8154m,
+                            Price = 3381m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 40,
                             CategoryId = 10,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1739),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4991),
                             Description = "Description 40",
                             Name = "Product 40",
-                            Price = 8361m,
+                            Price = 6985m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 41,
                             CategoryId = 11,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1741),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4992),
                             Description = "Description 41",
                             Name = "Product 41",
-                            Price = 1651m,
+                            Price = 1679m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 42,
                             CategoryId = 12,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1742),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4994),
                             Description = "Description 42",
                             Name = "Product 42",
-                            Price = 6427m,
+                            Price = 9258m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 43,
                             CategoryId = 13,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1744),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4996),
                             Description = "Description 43",
                             Name = "Product 43",
-                            Price = 5281m,
+                            Price = 4565m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 44,
                             CategoryId = 14,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1745),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4997),
                             Description = "Description 44",
                             Name = "Product 44",
-                            Price = 2178m,
+                            Price = 7544m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 45,
                             CategoryId = 15,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1747),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(4999),
                             Description = "Description 45",
                             Name = "Product 45",
-                            Price = 4041m,
+                            Price = 4756m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 46,
                             CategoryId = 16,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1748),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5000),
                             Description = "Description 46",
                             Name = "Product 46",
-                            Price = 2337m,
+                            Price = 9595m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 47,
                             CategoryId = 17,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1750),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5002),
                             Description = "Description 47",
                             Name = "Product 47",
-                            Price = 4369m,
+                            Price = 894m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 48,
                             CategoryId = 18,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1961),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5003),
                             Description = "Description 48",
                             Name = "Product 48",
-                            Price = 4954m,
+                            Price = 1336m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 49,
                             CategoryId = 19,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1963),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5005),
                             Description = "Description 49",
                             Name = "Product 49",
-                            Price = 3257m,
+                            Price = 2312m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 50,
                             CategoryId = 20,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1965),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5006),
                             Description = "Description 50",
                             Name = "Product 50",
-                            Price = 3782m,
+                            Price = 8818m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 51,
                             CategoryId = 21,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1967),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5008),
                             Description = "Description 51",
                             Name = "Product 51",
-                            Price = 3917m,
+                            Price = 2579m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 52,
                             CategoryId = 22,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1968),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5010),
                             Description = "Description 52",
                             Name = "Product 52",
-                            Price = 7323m,
+                            Price = 733m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 53,
                             CategoryId = 23,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1970),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5011),
                             Description = "Description 53",
                             Name = "Product 53",
-                            Price = 9312m,
+                            Price = 9252m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 54,
                             CategoryId = 24,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1972),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5013),
                             Description = "Description 54",
                             Name = "Product 54",
-                            Price = 1613m,
+                            Price = 6075m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 55,
                             CategoryId = 25,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1973),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5015),
                             Description = "Description 55",
                             Name = "Product 55",
-                            Price = 2677m,
+                            Price = 2371m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 56,
                             CategoryId = 26,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1975),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5035),
                             Description = "Description 56",
                             Name = "Product 56",
-                            Price = 8553m,
+                            Price = 8213m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 57,
                             CategoryId = 27,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1976),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5038),
                             Description = "Description 57",
                             Name = "Product 57",
-                            Price = 359m,
+                            Price = 4363m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 58,
                             CategoryId = 28,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1978),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5039),
                             Description = "Description 58",
                             Name = "Product 58",
-                            Price = 5319m,
+                            Price = 3577m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 59,
                             CategoryId = 29,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1980),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5041),
                             Description = "Description 59",
                             Name = "Product 59",
-                            Price = 1668m,
+                            Price = 1147m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 60,
                             CategoryId = 30,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1981),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5042),
                             Description = "Description 60",
                             Name = "Product 60",
-                            Price = 3809m,
+                            Price = 8301m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 61,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1983),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5044),
                             Description = "Description 61",
                             Name = "Product 61",
-                            Price = 1969m,
+                            Price = 7329m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 62,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1985),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5045),
                             Description = "Description 62",
                             Name = "Product 62",
-                            Price = 3574m,
+                            Price = 6980m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 63,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1986),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5047),
                             Description = "Description 63",
                             Name = "Product 63",
-                            Price = 7500m,
+                            Price = 1282m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 64,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1988),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5049),
                             Description = "Description 64",
                             Name = "Product 64",
-                            Price = 6771m,
+                            Price = 4138m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 65,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1989),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5050),
                             Description = "Description 65",
                             Name = "Product 65",
-                            Price = 7038m,
+                            Price = 5776m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 66,
                             CategoryId = 6,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1992),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5053),
                             Description = "Description 66",
                             Name = "Product 66",
-                            Price = 3437m,
+                            Price = 2409m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 67,
                             CategoryId = 7,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1994),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5055),
                             Description = "Description 67",
                             Name = "Product 67",
-                            Price = 8937m,
+                            Price = 3519m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 68,
                             CategoryId = 8,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1996),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5056),
                             Description = "Description 68",
                             Name = "Product 68",
-                            Price = 733m,
+                            Price = 6633m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 69,
                             CategoryId = 9,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1997),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5058),
                             Description = "Description 69",
                             Name = "Product 69",
-                            Price = 2894m,
+                            Price = 9166m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 70,
                             CategoryId = 10,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(1999),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5059),
                             Description = "Description 70",
                             Name = "Product 70",
-                            Price = 8345m,
+                            Price = 2497m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 71,
                             CategoryId = 11,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2000),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5061),
                             Description = "Description 71",
                             Name = "Product 71",
-                            Price = 755m,
+                            Price = 7165m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 72,
                             CategoryId = 12,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2002),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5063),
                             Description = "Description 72",
                             Name = "Product 72",
-                            Price = 3679m,
+                            Price = 7662m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 73,
                             CategoryId = 13,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2004),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5064),
                             Description = "Description 73",
                             Name = "Product 73",
-                            Price = 6015m,
+                            Price = 8921m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 74,
                             CategoryId = 14,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2005),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5066),
                             Description = "Description 74",
                             Name = "Product 74",
-                            Price = 4126m,
+                            Price = 4098m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 75,
                             CategoryId = 15,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2007),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5068),
                             Description = "Description 75",
                             Name = "Product 75",
-                            Price = 8301m,
+                            Price = 5810m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 76,
                             CategoryId = 16,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2009),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5069),
                             Description = "Description 76",
                             Name = "Product 76",
-                            Price = 106m,
+                            Price = 6133m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 77,
                             CategoryId = 17,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2011),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5071),
                             Description = "Description 77",
                             Name = "Product 77",
-                            Price = 2997m,
+                            Price = 5665m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 78,
                             CategoryId = 18,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2013),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5072),
                             Description = "Description 78",
                             Name = "Product 78",
-                            Price = 388m,
+                            Price = 1749m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 79,
                             CategoryId = 19,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2014),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5074),
                             Description = "Description 79",
                             Name = "Product 79",
-                            Price = 2186m,
+                            Price = 6214m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 80,
                             CategoryId = 20,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2016),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5076),
                             Description = "Description 80",
                             Name = "Product 80",
-                            Price = 7478m,
+                            Price = 3662m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 81,
                             CategoryId = 21,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2018),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5077),
                             Description = "Description 81",
                             Name = "Product 81",
-                            Price = 5541m,
+                            Price = 9436m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 82,
                             CategoryId = 22,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2019),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5079),
                             Description = "Description 82",
                             Name = "Product 82",
-                            Price = 9391m,
+                            Price = 8359m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 83,
                             CategoryId = 23,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2040),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5080),
                             Description = "Description 83",
                             Name = "Product 83",
-                            Price = 9590m,
+                            Price = 7131m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 84,
                             CategoryId = 24,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2042),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5082),
                             Description = "Description 84",
                             Name = "Product 84",
-                            Price = 6856m,
+                            Price = 6788m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 85,
                             CategoryId = 25,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2044),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5083),
                             Description = "Description 85",
                             Name = "Product 85",
-                            Price = 6243m,
+                            Price = 2254m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 86,
                             CategoryId = 26,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2046),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5085),
                             Description = "Description 86",
                             Name = "Product 86",
-                            Price = 927m,
+                            Price = 7185m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 87,
                             CategoryId = 27,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2048),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5086),
                             Description = "Description 87",
                             Name = "Product 87",
-                            Price = 2122m,
+                            Price = 3502m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 88,
                             CategoryId = 28,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2049),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5088),
                             Description = "Description 88",
                             Name = "Product 88",
-                            Price = 2936m,
+                            Price = 1248m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 89,
                             CategoryId = 29,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2051),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5090),
                             Description = "Description 89",
                             Name = "Product 89",
-                            Price = 9242m,
+                            Price = 3065m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 90,
                             CategoryId = 30,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2053),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5092),
                             Description = "Description 90",
                             Name = "Product 90",
-                            Price = 2606m,
+                            Price = 8769m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 91,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2054),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5093),
                             Description = "Description 91",
                             Name = "Product 91",
-                            Price = 7161m,
+                            Price = 4394m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 92,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2056),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5114),
                             Description = "Description 92",
                             Name = "Product 92",
-                            Price = 9963m,
+                            Price = 2223m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 93,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2058),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5116),
                             Description = "Description 93",
                             Name = "Product 93",
-                            Price = 1006m,
+                            Price = 8941m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 94,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2059),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5118),
                             Description = "Description 94",
                             Name = "Product 94",
-                            Price = 4198m,
+                            Price = 2181m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 95,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2061),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5119),
                             Description = "Description 95",
                             Name = "Product 95",
-                            Price = 3168m,
+                            Price = 924m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 96,
                             CategoryId = 6,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2062),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5121),
                             Description = "Description 96",
                             Name = "Product 96",
-                            Price = 7101m,
+                            Price = 8708m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 97,
                             CategoryId = 7,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2064),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5122),
                             Description = "Description 97",
                             Name = "Product 97",
-                            Price = 4531m,
+                            Price = 8329m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 98,
                             CategoryId = 8,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2065),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5124),
                             Description = "Description 98",
                             Name = "Product 98",
-                            Price = 3028m,
+                            Price = 2561m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 99,
                             CategoryId = 9,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2067),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5126),
                             Description = "Description 99",
                             Name = "Product 99",
-                            Price = 7304m,
+                            Price = 295m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 100,
                             CategoryId = 10,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2069),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5129),
                             Description = "Description 100",
                             Name = "Product 100",
-                            Price = 2549m,
+                            Price = 1611m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 101,
                             CategoryId = 11,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2071),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5131),
                             Description = "Description 101",
                             Name = "Product 101",
-                            Price = 3676m,
+                            Price = 2523m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 102,
                             CategoryId = 12,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2072),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5133),
                             Description = "Description 102",
                             Name = "Product 102",
-                            Price = 3011m,
+                            Price = 8258m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 103,
                             CategoryId = 13,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2074),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5134),
                             Description = "Description 103",
                             Name = "Product 103",
-                            Price = 1453m,
+                            Price = 4730m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 104,
                             CategoryId = 14,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2076),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5136),
                             Description = "Description 104",
                             Name = "Product 104",
-                            Price = 9085m,
+                            Price = 8148m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 105,
                             CategoryId = 15,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2077),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5137),
                             Description = "Description 105",
                             Name = "Product 105",
-                            Price = 6526m,
+                            Price = 4768m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 106,
                             CategoryId = 16,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2079),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5139),
                             Description = "Description 106",
                             Name = "Product 106",
-                            Price = 5313m,
+                            Price = 3645m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 107,
                             CategoryId = 17,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2080),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5141),
                             Description = "Description 107",
                             Name = "Product 107",
-                            Price = 8008m,
+                            Price = 7325m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 108,
                             CategoryId = 18,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2105),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5143),
                             Description = "Description 108",
                             Name = "Product 108",
-                            Price = 9874m,
+                            Price = 1904m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 109,
                             CategoryId = 19,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2108),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5144),
                             Description = "Description 109",
                             Name = "Product 109",
-                            Price = 5942m,
+                            Price = 9953m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 110,
                             CategoryId = 20,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2109),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5146),
                             Description = "Description 110",
                             Name = "Product 110",
-                            Price = 709m,
+                            Price = 8038m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 111,
                             CategoryId = 21,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2111),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5147),
                             Description = "Description 111",
                             Name = "Product 111",
-                            Price = 1025m,
+                            Price = 9814m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 112,
                             CategoryId = 22,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2113),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5149),
                             Description = "Description 112",
                             Name = "Product 112",
-                            Price = 8482m,
+                            Price = 9831m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 113,
                             CategoryId = 23,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2115),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5150),
                             Description = "Description 113",
                             Name = "Product 113",
-                            Price = 8859m,
+                            Price = 9076m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 114,
                             CategoryId = 24,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2117),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5152),
                             Description = "Description 114",
                             Name = "Product 114",
-                            Price = 3592m,
+                            Price = 8570m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 115,
                             CategoryId = 25,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2118),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5154),
                             Description = "Description 115",
                             Name = "Product 115",
-                            Price = 1313m,
+                            Price = 2857m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 116,
                             CategoryId = 26,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2120),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5155),
                             Description = "Description 116",
                             Name = "Product 116",
-                            Price = 6917m,
+                            Price = 3738m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 117,
                             CategoryId = 27,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2122),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5157),
                             Description = "Description 117",
                             Name = "Product 117",
-                            Price = 3263m,
+                            Price = 574m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 118,
                             CategoryId = 28,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2124),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5158),
                             Description = "Description 118",
                             Name = "Product 118",
-                            Price = 9561m,
+                            Price = 4605m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 119,
                             CategoryId = 29,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2125),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5160),
                             Description = "Description 119",
                             Name = "Product 119",
-                            Price = 4449m,
+                            Price = 5209m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 120,
                             CategoryId = 30,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2127),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5162),
                             Description = "Description 120",
                             Name = "Product 120",
-                            Price = 435m,
+                            Price = 7709m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 121,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2129),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5163),
                             Description = "Description 121",
                             Name = "Product 121",
-                            Price = 8891m,
+                            Price = 6337m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 122,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2130),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5165),
                             Description = "Description 122",
                             Name = "Product 122",
-                            Price = 3483m,
+                            Price = 2544m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 123,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2132),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5166),
                             Description = "Description 123",
                             Name = "Product 123",
-                            Price = 4326m,
+                            Price = 6006m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 124,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2195),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5168),
                             Description = "Description 124",
                             Name = "Product 124",
-                            Price = 1337m,
+                            Price = 3712m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 125,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2197),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5170),
                             Description = "Description 125",
                             Name = "Product 125",
-                            Price = 5258m,
+                            Price = 8827m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 126,
                             CategoryId = 6,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2198),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5171),
                             Description = "Description 126",
                             Name = "Product 126",
-                            Price = 3615m,
+                            Price = 3788m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 127,
                             CategoryId = 7,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2200),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5173),
                             Description = "Description 127",
                             Name = "Product 127",
-                            Price = 6741m,
+                            Price = 9017m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 128,
                             CategoryId = 8,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2201),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5175),
                             Description = "Description 128",
                             Name = "Product 128",
-                            Price = 9570m,
+                            Price = 699m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 129,
                             CategoryId = 9,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2203),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5176),
                             Description = "Description 129",
                             Name = "Product 129",
-                            Price = 6844m,
+                            Price = 712m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 130,
                             CategoryId = 10,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2206),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5200),
                             Description = "Description 130",
                             Name = "Product 130",
-                            Price = 7296m,
+                            Price = 3469m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 131,
                             CategoryId = 11,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2207),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5202),
                             Description = "Description 131",
                             Name = "Product 131",
-                            Price = 1174m,
+                            Price = 51m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 132,
                             CategoryId = 12,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2209),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5204),
                             Description = "Description 132",
                             Name = "Product 132",
-                            Price = 4782m,
+                            Price = 8552m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 133,
                             CategoryId = 13,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2210),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5205),
                             Description = "Description 133",
                             Name = "Product 133",
-                            Price = 6761m,
+                            Price = 1099m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 134,
                             CategoryId = 14,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2212),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5207),
                             Description = "Description 134",
                             Name = "Product 134",
-                            Price = 94m,
+                            Price = 7554m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 135,
                             CategoryId = 15,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2213),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5208),
                             Description = "Description 135",
                             Name = "Product 135",
-                            Price = 1394m,
+                            Price = 8092m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 136,
                             CategoryId = 16,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2215),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5210),
                             Description = "Description 136",
                             Name = "Product 136",
-                            Price = 4933m,
+                            Price = 2739m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 137,
                             CategoryId = 17,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2216),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5212),
                             Description = "Description 137",
                             Name = "Product 137",
-                            Price = 5425m,
+                            Price = 1123m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 138,
                             CategoryId = 18,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2218),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5213),
                             Description = "Description 138",
                             Name = "Product 138",
-                            Price = 3812m,
+                            Price = 3137m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 139,
                             CategoryId = 19,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2219),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5215),
                             Description = "Description 139",
                             Name = "Product 139",
-                            Price = 9210m,
+                            Price = 5139m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 140,
                             CategoryId = 20,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2221),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5216),
                             Description = "Description 140",
                             Name = "Product 140",
-                            Price = 9883m,
+                            Price = 569m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 141,
                             CategoryId = 21,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2222),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5218),
                             Description = "Description 141",
                             Name = "Product 141",
-                            Price = 7457m,
+                            Price = 3534m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 142,
                             CategoryId = 22,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2224),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5220),
                             Description = "Description 142",
                             Name = "Product 142",
-                            Price = 3647m,
+                            Price = 6428m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 143,
                             CategoryId = 23,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2225),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5221),
                             Description = "Description 143",
                             Name = "Product 143",
-                            Price = 1542m,
+                            Price = 6654m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 144,
                             CategoryId = 24,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2226),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5223),
                             Description = "Description 144",
                             Name = "Product 144",
-                            Price = 6717m,
+                            Price = 2269m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 145,
                             CategoryId = 25,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2228),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5225),
                             Description = "Description 145",
                             Name = "Product 145",
-                            Price = 4433m,
+                            Price = 1967m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 146,
                             CategoryId = 26,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2229),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5226),
                             Description = "Description 146",
                             Name = "Product 146",
-                            Price = 8776m,
+                            Price = 4227m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 147,
                             CategoryId = 27,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2231),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5228),
                             Description = "Description 147",
                             Name = "Product 147",
-                            Price = 3632m,
+                            Price = 3231m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 148,
                             CategoryId = 28,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2233),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5229),
                             Description = "Description 148",
                             Name = "Product 148",
-                            Price = 9926m,
+                            Price = 7294m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 149,
                             CategoryId = 29,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2234),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5231),
                             Description = "Description 149",
                             Name = "Product 149",
-                            Price = 5776m,
+                            Price = 1583m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 150,
                             CategoryId = 30,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2235),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5232),
                             Description = "Description 150",
                             Name = "Product 150",
-                            Price = 6055m,
+                            Price = 3402m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 151,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2237),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5234),
                             Description = "Description 151",
                             Name = "Product 151",
-                            Price = 6291m,
+                            Price = 7128m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 152,
                             CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2239),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5236),
                             Description = "Description 152",
                             Name = "Product 152",
-                            Price = 3828m,
+                            Price = 1768m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 153,
                             CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2240),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5238),
                             Description = "Description 153",
                             Name = "Product 153",
-                            Price = 9414m,
+                            Price = 3824m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 154,
                             CategoryId = 4,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2241),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5239),
                             Description = "Description 154",
                             Name = "Product 154",
-                            Price = 6961m,
+                            Price = 8960m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 155,
                             CategoryId = 5,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2271),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5241),
                             Description = "Description 155",
                             Name = "Product 155",
-                            Price = 6619m,
+                            Price = 7217m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 156,
                             CategoryId = 6,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2273),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5242),
                             Description = "Description 156",
                             Name = "Product 156",
-                            Price = 360m,
+                            Price = 9267m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 157,
                             CategoryId = 7,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2275),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5244),
                             Description = "Description 157",
                             Name = "Product 157",
-                            Price = 2962m,
+                            Price = 8051m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 158,
                             CategoryId = 8,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2276),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5246),
                             Description = "Description 158",
                             Name = "Product 158",
-                            Price = 3920m,
+                            Price = 3965m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 159,
                             CategoryId = 9,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2278),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5247),
                             Description = "Description 159",
                             Name = "Product 159",
-                            Price = 2972m,
+                            Price = 5399m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 160,
                             CategoryId = 10,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2279),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5249),
                             Description = "Description 160",
                             Name = "Product 160",
-                            Price = 2123m,
+                            Price = 6785m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 161,
                             CategoryId = 11,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2281),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5250),
                             Description = "Description 161",
                             Name = "Product 161",
-                            Price = 8237m,
+                            Price = 2013m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 162,
                             CategoryId = 12,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2282),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5252),
                             Description = "Description 162",
                             Name = "Product 162",
-                            Price = 1255m,
+                            Price = 5039m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 163,
                             CategoryId = 13,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2284),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5274),
                             Description = "Description 163",
                             Name = "Product 163",
-                            Price = 8662m,
+                            Price = 9739m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 164,
                             CategoryId = 14,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2286),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5276),
                             Description = "Description 164",
                             Name = "Product 164",
-                            Price = 1290m,
+                            Price = 7162m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 165,
                             CategoryId = 15,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2287),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5278),
                             Description = "Description 165",
                             Name = "Product 165",
-                            Price = 8165m,
+                            Price = 6922m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 166,
                             CategoryId = 16,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2289),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5280),
                             Description = "Description 166",
                             Name = "Product 166",
-                            Price = 2565m,
+                            Price = 3934m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 167,
                             CategoryId = 17,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2290),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5282),
                             Description = "Description 167",
                             Name = "Product 167",
-                            Price = 6000m,
+                            Price = 2778m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 168,
                             CategoryId = 18,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2292),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5283),
                             Description = "Description 168",
                             Name = "Product 168",
-                            Price = 416m,
+                            Price = 3043m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 169,
                             CategoryId = 19,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2293),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5285),
                             Description = "Description 169",
                             Name = "Product 169",
-                            Price = 8039m,
+                            Price = 8095m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 170,
                             CategoryId = 20,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2295),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5286),
                             Description = "Description 170",
                             Name = "Product 170",
-                            Price = 805m,
+                            Price = 5762m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 171,
                             CategoryId = 21,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2297),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5288),
                             Description = "Description 171",
                             Name = "Product 171",
-                            Price = 3645m,
+                            Price = 2151m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 172,
                             CategoryId = 22,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2298),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5289),
                             Description = "Description 172",
                             Name = "Product 172",
-                            Price = 6014m,
+                            Price = 9992m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 173,
                             CategoryId = 23,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2299),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5291),
                             Description = "Description 173",
                             Name = "Product 173",
-                            Price = 6987m,
+                            Price = 9933m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 174,
                             CategoryId = 24,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2315),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5293),
                             Description = "Description 174",
                             Name = "Product 174",
-                            Price = 6325m,
+                            Price = 5866m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 175,
                             CategoryId = 25,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2317),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5295),
                             Description = "Description 175",
                             Name = "Product 175",
-                            Price = 8324m,
+                            Price = 1759m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 176,
                             CategoryId = 26,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2319),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5297),
                             Description = "Description 176",
                             Name = "Product 176",
-                            Price = 5579m,
+                            Price = 5139m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 177,
                             CategoryId = 27,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2321),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5298),
                             Description = "Description 177",
                             Name = "Product 177",
-                            Price = 5539m,
+                            Price = 1153m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 178,
                             CategoryId = 28,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2322),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5300),
                             Description = "Description 178",
                             Name = "Product 178",
-                            Price = 7400m,
+                            Price = 9750m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 179,
                             CategoryId = 29,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2324),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5302),
                             Description = "Description 179",
                             Name = "Product 179",
-                            Price = 713m,
+                            Price = 6915m,
                             StockStatus = true
                         },
                         new
                         {
                             Id = 180,
                             CategoryId = 30,
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2326),
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5304),
                             Description = "Description 180",
                             Name = "Product 180",
-                            Price = 5696m,
+                            Price = 1396m,
                             StockStatus = true
                         });
                 });
 
-            modelBuilder.Entity("Entity.Models.ProductBasket", b =>
+            modelBuilder.Entity("Entity.Models.ProductCart", b =>
                 {
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
@@ -2355,8 +2355,8 @@ namespace Api.Migrations
                         {
                             Id = 1,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a9645daf-f6bd-4538-a6d0-fa9da3a77e1b",
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2680),
+                            ConcurrencyStamp = "5bdf33cc-e04e-4e4f-aa52-410c2fc95903",
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5550),
                             Email = "kullanici1@admin.com",
                             EmailConfirmed = true,
                             FirstName = "Kullanici1",
@@ -2364,10 +2364,10 @@ namespace Api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "kullanici1@GMAIL.COM",
                             NormalizedUserName = "KULLANICI1",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBPuYEOPDvSLZwaQqqxSK57ysiTQupNV00HI1qvVSEztvK7pI3cLujw+fMY4gp1GWg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAuJ5+3CWEidsfrEcRaGiNsWsF90xRMicw3ASlnEPnzWXUFcV2MWLkp7bW2cWNYLkg==",
                             PhoneNumber = "+9053399999991",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "29295992-e7b2-4ef6-9880-e293fec0eac1",
+                            SecurityStamp = "e26502c9-3f8f-4176-901c-a6d6ce546d03",
                             TwoFactorEnabled = false,
                             UserName = "kullanici1"
                         },
@@ -2375,8 +2375,8 @@ namespace Api.Migrations
                         {
                             Id = 2,
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "c628cee0-3df6-4e48-8909-48c257f7c08f",
-                            CreatedDate = new DateTime(2023, 7, 11, 19, 50, 22, 998, DateTimeKind.Local).AddTicks(2689),
+                            ConcurrencyStamp = "4258811d-a83f-46a6-9e55-1c8f76e515af",
+                            CreatedDate = new DateTime(2023, 7, 14, 17, 4, 55, 278, DateTimeKind.Local).AddTicks(5559),
                             Email = "kullanici2@admin.com",
                             EmailConfirmed = true,
                             FirstName = "Kullanici2",
@@ -2384,10 +2384,10 @@ namespace Api.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "kullanici2@GMAIL.COM",
                             NormalizedUserName = "KULLANICI2",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAF708c8rTFH/i3g9cec8s2vOvoqBxcZu/lpHtFQdXmi2gr2w6vxbei0olIfufr4Vw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOt0zh+jTHimeIecKvUFxch7nIzu7hfNvL5zZ6KrBloZo9RSpPWA8B///kSijIu0lg==",
                             PhoneNumber = "+9053399999991",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "93b86b6f-9eb4-41fb-834e-b57a0ac4ac04",
+                            SecurityStamp = "297556d4-506e-46f8-8ade-24391906b311",
                             TwoFactorEnabled = false,
                             UserName = "kullanici2"
                         });
@@ -2545,11 +2545,11 @@ namespace Api.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Entity.Models.Basket", b =>
+            modelBuilder.Entity("Entity.Models.Cart", b =>
                 {
                     b.HasOne("Entity.Models.User", "User")
                         .WithOne("Basket")
-                        .HasForeignKey("Entity.Models.Basket", "UserId")
+                        .HasForeignKey("Entity.Models.Cart", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -2578,9 +2578,9 @@ namespace Api.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("Entity.Models.ProductBasket", b =>
+            modelBuilder.Entity("Entity.Models.ProductCart", b =>
                 {
-                    b.HasOne("Entity.Models.Basket", "Basket")
+                    b.HasOne("Entity.Models.Cart", "Basket")
                         .WithMany("Products")
                         .HasForeignKey("BasketId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -2667,7 +2667,7 @@ namespace Api.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Entity.Models.Basket", b =>
+            modelBuilder.Entity("Entity.Models.Cart", b =>
                 {
                     b.Navigation("Products");
                 });

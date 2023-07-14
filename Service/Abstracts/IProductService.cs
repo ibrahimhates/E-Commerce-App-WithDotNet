@@ -13,7 +13,7 @@ namespace Service.Abstracts
             ProductParams productParams,int id,bool trackChanges);
         Task<ProductDto?> GetOneProductByIdAsync(int id, bool trackChanges);
         Task<ProductDto?> CreateOneProductAsync(ProductInsertionDto productInsertionDto);
-        Task UpdateOneProductAsync(int id, ProductUpdateDto productUpdateDto, bool trackChanges);
+        Task UpdateOneProductAsync(ProductUpdateDto productUpdateDto, bool trackChanges);
         Task DeleteOneProductAsync(int id, bool trackChanges);
     }
 }

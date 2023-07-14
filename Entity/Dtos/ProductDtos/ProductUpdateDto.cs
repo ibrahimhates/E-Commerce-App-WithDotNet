@@ -8,6 +8,5 @@ namespace Entity.Dtos.ProductDtos
         public string Description { get; init; }
         public decimal Price { get; init; }
         public bool StockStatus { get; init; }
-        public int CategoryId { get; init; }
     }
 }

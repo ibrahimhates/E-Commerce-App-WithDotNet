@@ -1,6 +1,7 @@
 ﻿using Entity.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Presentation.ActionFilter;
 using Repository;
 using Repository.Repositories;
 using Repository.Repositories.Abstracts;
@@ -12,6 +13,7 @@ using Service.Abstracts.LoggerAbstract;
 using Service.Concrates;
 using Service.Concrates.Auth;
 using Service.Concrates.LoggerConcrate;
+using System.Reflection;
 
 namespace Api.Extensions
 {
@@ -68,5 +70,11 @@ namespace Api.Extensions
 
         public static void ConfigureAuthServiceInjection(this IServiceCollection services) =>
             services.AddScoped<IAuthenticationService, AuthenticationManager>();
+
+        public static void ConfigureActionFilter(this IServiceCollection services)
+        {
+            services.AddSingleton<LogFilterAttribute>();
+            services.AddSingleton<ValidationFilterAttribute>();
+        }
     }
 }

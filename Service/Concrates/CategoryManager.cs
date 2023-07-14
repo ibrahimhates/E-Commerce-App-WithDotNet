@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Entity.Dtos.CategoryDtos;
-using Entity.Dtos.ProductDtos;
 using Entity.Exceptions.Category;
 using Entity.Models;
 using Repository.Repositories;

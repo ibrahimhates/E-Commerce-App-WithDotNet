@@ -52,10 +52,10 @@ namespace Service.Concrates.Auth
 
             return result;
         }
-        public string CreateToken()
+        public async Task<string> CreateTokenAsync()
         {
             var signinCredentials = GetSigninCredentials();
-            var claims = GetClaims();
+            var claims = await GetClaims();
             var tokenOptions = GenerateTokenOptions(signinCredentials, claims);
 
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);

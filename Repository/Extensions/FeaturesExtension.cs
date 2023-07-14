@@ -14,9 +14,8 @@ namespace Repository.Extensions
             return pagedQuery;
         }
 
-        public static IQueryable<T> Search<T,TKey>(this IQueryable<T> query,
-            Func<T, TKey> propertySelector,
-            string searchTerm) where T : class
+        public static IQueryable<Product> Search(this IQueryable<Product> query,
+            string searchTerm)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
                 return query;
@@ -24,8 +23,7 @@ namespace Repository.Extensions
             var lowerCaseTerm = searchTerm.Trim().ToLower();
 
             return query
-                .Where(b => propertySelector(b)
-                .ToString()
+                .Where(b => b.Name
                 .ToLower()
                 .Contains(lowerCaseTerm));
         }

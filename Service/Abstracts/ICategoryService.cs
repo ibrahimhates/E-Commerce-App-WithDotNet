@@ -1,6 +1,5 @@
 ﻿
 using Entity.Dtos.CategoryDtos;
-using Entity.Models;
 
 namespace Service.Abstracts
 {

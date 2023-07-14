@@ -14,5 +14,7 @@ namespace Repository.Repositories.Abstracts
         Task<Product?> GetOneProductByIdAsync(int id, bool trackChanges);
 
         Task<int> GetCountWithAllMembers(ProductParams productParams);
+
+        Task<int> GetCountWithAllMembers(ProductParams productParams,int id);
     }
 }

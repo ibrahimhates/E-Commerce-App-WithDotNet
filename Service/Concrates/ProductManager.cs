@@ -33,9 +33,13 @@ namespace Service.Concrates
 
             var productDtos = _mapper.Map<List<ProductDto>>(products);
 
-            var metaData = await 
+            var count = await _repository
+                .ProductRepository
+                .GetCountWithAllMembers(productParams);
+
+            var metaData = 
                 GetMetaDataAndSetLoggerAsync("All products returned successfully",
-                productParams);
+                productParams,count);
 
             return (products: productDtos, metaData: metaData);
         }
@@ -45,14 +49,18 @@ namespace Service.Concrates
         {
             var products = await _repository
                 .ProductRepository
-                .GetAllProductAsync(productParams, trackChanges);
+                .GetAllProductByCategory(productParams,id, trackChanges);
 
             var productDtos = _mapper.Map<List<ProductDto>>(products);
 
-            var metaData = await
+            var count = await _repository
+                .ProductRepository
+                .GetCountWithAllMembers(productParams,id);
+
+            var metaData =
                 GetMetaDataAndSetLoggerAsync("All products returned" +
                 $" by categoryId:{id} successfully",
-                productParams);
+                productParams,count);
 
             return (products: productDtos, metaData: metaData);
         }
@@ -88,14 +96,14 @@ namespace Service.Concrates
             return _mapper.Map<ProductDto>(product);
         }
 
-        public async Task UpdateOneProductAsync(int id, ProductUpdateDto productUpdateDto, bool trackChanges)
+        public async Task UpdateOneProductAsync(ProductUpdateDto productUpdateDto, bool trackChanges)
         {
-            var product = await GetOneProductCheckExistAsync(id, trackChanges);
+            var product = await GetOneProductCheckExistAsync(productUpdateDto.Id, trackChanges);
 
             product = _mapper.Map(productUpdateDto, product);
             _repository.ProductRepository.Update(product);
 
-            _logger.LogInfo($"Product updated with id: {id}");
+            _logger.LogInfo($"Product updated with id: {productUpdateDto.Id}");
 
             await _repository.SaveAsync();
         }
@@ -110,13 +118,9 @@ namespace Service.Concrates
 
             await _repository.SaveAsync();
         }
-        private async Task<MetaData> GetMetaDataAndSetLoggerAsync(
-            string message,ProductParams productParams)
+        private MetaData GetMetaDataAndSetLoggerAsync(
+            string message,ProductParams productParams,int count)
         {
-            var count = await _repository
-                .ProductRepository
-                .GetCountWithAllMembers(productParams);
-
             var metaData = new MetaData()
             {
                 CurrentPage = productParams.PageNumber,

@@ -17,7 +17,8 @@ namespace Repository.Repositories.Concretes
         {
             var products = await
                 GetAll(trackChanges)
-                .Search(x => x.Name, productParams.SearchTerm)
+                .Include(x => x.Category)
+                .Search(productParams.SearchTerm)
                 .Sort(productParams.OrderBy)
                 .ToPageList(productParams.PageNumber,productParams.PageSize)
                 .ToListAsync();
@@ -30,7 +31,7 @@ namespace Repository.Repositories.Concretes
         {
             var products = await
                 GetByCondition(x => x.CategoryId == id,trackChanges)
-                .Search(x => x.Name, productParams.SearchTerm)
+                .Search(productParams.SearchTerm)
                 .Sort(productParams.OrderBy)
                 .ToPageList(productParams.PageNumber, productParams.PageSize)
                 .ToListAsync();
@@ -42,7 +43,19 @@ namespace Repository.Repositories.Concretes
         {
             var count = await
                 GetAll(false)
-                .Search(x => x.Name, productParams.SearchTerm)
+                .Search(productParams.SearchTerm)
+                .Sort(productParams.OrderBy)
+                .CountAsync();
+
+            return count;
+        }
+
+        public async Task<int> GetCountWithAllMembers(ProductParams productParams, int id)
+        {
+            var count = await
+                GetAll(false)
+                .Where(x => x.CategoryId == id)
+                .Search(productParams.SearchTerm)
                 .Sort(productParams.OrderBy)
                 .CountAsync();
 
@@ -53,6 +66,7 @@ namespace Repository.Repositories.Concretes
         {
             var product = await 
                 GetByCondition(x => x.Id == id,trackChanges)
+                .Include(x => x.Category)
                 .SingleOrDefaultAsync();
 
             return product;
