@@ -17,6 +17,9 @@ builder.Services.ConfigureIdentity();
 builder.Services.ConfigureRepositoriesInjection();
 builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureServiceInjection();
+builder.Services.ConfigureAuthServiceInjection();
+
+
 
 var app = builder.Build();
 

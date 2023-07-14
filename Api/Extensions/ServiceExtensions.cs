@@ -7,8 +7,10 @@ using Repository.Repositories.Abstracts;
 using Repository.Repositories.Concretes;
 using Repository.UnitOfWorks;
 using Service.Abstracts;
+using Service.Abstracts.Auth;
 using Service.Abstracts.LoggerAbstract;
 using Service.Concrates;
+using Service.Concrates.Auth;
 using Service.Concrates.LoggerConcrate;
 
 namespace Api.Extensions
@@ -63,5 +65,8 @@ namespace Api.Extensions
             services.AddScoped<IOrderService, OrderManager>();
             services.AddScoped<ICartService, CartManager>();
         }
+
+        public static void ConfigureAuthServiceInjection(this IServiceCollection services) =>
+            services.AddScoped<IAuthenticationService, AuthenticationManager>();
     }
 }
