@@ -1,5 +1,5 @@
 ﻿
-using Entity.Models;
+using Entity.Dtos.ProdcutCartDtos;
 
 namespace Entity.Dtos.CartDtos
 {
@@ -7,6 +7,6 @@ namespace Entity.Dtos.CartDtos
     {
         public int UserId { get; init; }
         public decimal Total { get; init; }
-        public ICollection<ProductCart> Products { get; init; }
+        public ICollection<ProductCartDto> Products { get; init; }
     }
 }

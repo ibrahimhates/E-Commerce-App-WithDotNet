@@ -2,10 +2,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Repository;
+using Repository.Repositories;
 using Repository.Repositories.Abstracts;
 using Repository.Repositories.Concretes;
 using Repository.UnitOfWorks;
-using System;
+using Service.Abstracts;
+using Service.Abstracts.LoggerAbstract;
+using Service.Concrates;
+using Service.Concrates.LoggerConcrate;
 
 namespace Api.Extensions
 {
@@ -36,9 +40,10 @@ namespace Api.Extensions
                 .AddDefaultTokenProviders();
         }
 
-        public static void ConfigureRepositories(this IServiceCollection services)
+        public static void ConfigureRepositoriesInjection(this IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IRepositoryManager, RepositoryManager>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IAddressRepository, AddressRepository>();
@@ -46,6 +51,17 @@ namespace Api.Extensions
             services.AddScoped<ICartRepository, CartRepository>();
             services.AddScoped<IProductOrderRepository, ProductOrderRepository>();
             services.AddScoped<IProductBasketRepository, ProductBasketRepository>();
+        }
+
+        public static void ConfigureLoggerService(this IServiceCollection services) =>
+           services.AddSingleton<ILoggerService, LoggerManager>();
+        public static void ConfigureServiceInjection(this IServiceCollection services)
+        {
+            services.AddScoped<IProductService, ProductManager>();
+            services.AddScoped<ICategoryService, CategoryManager>();
+            services.AddScoped<IAddressService, AddressManager>();
+            services.AddScoped<IOrderService, OrderManager>();
+            services.AddScoped<ICartService, CartManager>();
         }
     }
 }

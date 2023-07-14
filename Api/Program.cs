@@ -14,8 +14,9 @@ builder.Services.AddSwaggerGen();
 //Custom ServiceConfigure
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.ConfigureIdentity();
-builder.Services.ConfigureRepositories();
-
+builder.Services.ConfigureRepositoriesInjection();
+builder.Services.ConfigureLoggerService();
+builder.Services.ConfigureServiceInjection();
 
 var app = builder.Build();
 

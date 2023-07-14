@@ -3,7 +3,7 @@ using Service.Abstracts.LoggerAbstract;
 
 namespace Service.Concrates.LoggerConcrate
 {
-    internal class LoggerManager : ILoggerService
+    public class LoggerManager : ILoggerService
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 

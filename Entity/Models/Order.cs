@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Entity.Models
 {
     public class Order
@@ -17,6 +12,6 @@ namespace Entity.Models
         public bool DeliveryStatus { get; set; }
         public User User { get; set; }
         public Address Address { get; set; }
-        public ICollection<ProductOrder>? Products { get; set; }
+        public ICollection<ProductOrder> Products { get; set; }
     }
 }

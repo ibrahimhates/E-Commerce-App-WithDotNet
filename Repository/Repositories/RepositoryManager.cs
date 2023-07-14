@@ -37,7 +37,7 @@ namespace Repository.Repositories
 
         public IOrderRepository OrderRepository => _orderRepository;
 
-        public ICartRepository BasketRepository => _basketRepository;
+        public ICartRepository CartRepository => _basketRepository;
 
         public IProductOrderRepository ProductOrderRepository => _productOrderRepository;
 

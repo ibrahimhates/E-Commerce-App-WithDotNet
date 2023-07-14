@@ -12,16 +12,25 @@ namespace Repository.Repositories.Concretes
 
         public async Task<IEnumerable<Order>> GetAllOrderAsync(int id,bool trackChanges)
         {
-            var orders = await 
-                GetByCondition(x => x.UserId == id,trackChanges)
+            var orders = await
+                GetByCondition(x => x.UserId == id, trackChanges)
+                .Include(a => a.Address)
+                .Include(p => p.Products)
+                    .ThenInclude(p => p.Product)
                 .ToListAsync();
 
             return orders;
         }
 
-        public async Task<Order?> GetOneOrderAsync(int id, bool trackChanges) => 
-            await GetByCondition(x => x.Id == id,trackChanges)
+        public async Task<Order?> GetOneOrderAsync(int id, bool trackChanges)
+        {
+            var order  = await GetByCondition(x => x.Id == id,trackChanges)
+            .Include(a => a.Address)
+            .Include(p => p.Products)
+                .ThenInclude(p => p.Product)
             .SingleOrDefaultAsync();
 
+            return order;   
+        }
     }
 }

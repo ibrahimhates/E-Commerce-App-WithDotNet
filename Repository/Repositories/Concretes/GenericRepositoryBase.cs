@@ -34,11 +34,10 @@ namespace Repository.Repositories.Concretes
 
         public void Delete(T entity) => _context.Set<T>().Remove(entity);
 
-        public Task<bool> AnyAsync(Expression<Func<T, bool>> expression) => 
-            _context.Set<T>().AnyAsync(expression);
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> expression) => 
+            await _context.Set<T>().AnyAsync(expression);
 
-        public Task<int> CountAsync(Expression<Func<T, bool>> expression) => 
-            _context.Set<T>().CountAsync(expression);
-
+        public async Task CreateRangeAsync(IEnumerable<T> entity) => 
+            await _context.Set<T>().AddRangeAsync(entity);
     }
 }

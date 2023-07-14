@@ -31,7 +31,7 @@ namespace Service.Concrates
 
         public async Task<CartDto> GetCartAsync(int id, bool trackChanges)
         {
-            var cart = await _repository.BasketRepository.GetCartAsync(id, trackChanges);
+            var cart = await _repository.CartRepository.GetCartAsync(id, trackChanges);
             if (cart is null)
             {
                 _logger.LogWarning($"Cart could not found maybe is empty userId:{id}");
@@ -44,13 +44,13 @@ namespace Service.Concrates
         public async Task AddProductToCart(int userId, int productId)
         {
             var isExist = await _repository
-                .BasketRepository
+                .CartRepository
                 .AnyAsync(x => x.UserId == userId);
 
             if (!isExist)
             {
                 await _repository
-                    .BasketRepository
+                    .CartRepository
                     .CreateAsync(new Cart()
                     {
                         UserId = userId,
@@ -74,12 +74,12 @@ namespace Service.Concrates
                 .FirstOrDefaultAsync();
 
             var cart = await _repository
-                .BasketRepository
+                .CartRepository
                 .GetCartAsync(userId, false);
 
             cart.Total += price;
 
-            _repository.BasketRepository.Update(cart);
+            _repository.CartRepository.Update(cart);
             await _repository.SaveAsync();
             _logger.LogInfo($"The product added in cart");
 
@@ -88,7 +88,7 @@ namespace Service.Concrates
         public async Task RemoveProductToCart(int userId, int productId)
         {
             var cart = await _repository
-                .BasketRepository
+                .CartRepository
                 .GetCartAsync(userId, false);
 
             if (cart is null)
@@ -118,10 +118,10 @@ namespace Service.Concrates
             cart.Products.Remove(productInCart);
 
             if(cart.Products.Count == 0)
-               _repository.BasketRepository.Delete(cart);
+               _repository.CartRepository.Delete(cart);
 
             _repository.ProductBasketRepository.Delete(productInCart);
-            _repository.BasketRepository.Update(cart);
+            _repository.CartRepository.Update(cart);
             await _repository.SaveAsync();
         }
     }
