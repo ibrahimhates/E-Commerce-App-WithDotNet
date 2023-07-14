@@ -1,6 +1,4 @@
-﻿
-using Entity.Dtos.ProductDtos;
-using Entity.Models;
+﻿using Entity.Dtos.ProductDtos;
 using Entity.RequestFeatures;
 
 namespace Service.Abstracts

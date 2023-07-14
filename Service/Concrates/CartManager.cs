@@ -118,10 +118,11 @@ namespace Service.Concrates
             cart.Products.Remove(productInCart);
 
             if(cart.Products.Count == 0)
-               _repository.CartRepository.Delete(cart);
+                _repository.CartRepository.Delete(cart);
+            else
+                _repository.CartRepository.Update(cart);
 
             _repository.ProductBasketRepository.Delete(productInCart);
-            _repository.CartRepository.Update(cart);
             await _repository.SaveAsync();
         }
     }
