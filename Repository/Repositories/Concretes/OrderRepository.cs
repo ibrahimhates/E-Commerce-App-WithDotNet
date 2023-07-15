@@ -14,7 +14,6 @@ namespace Repository.Repositories.Concretes
         {
             var orders = await
                 GetByCondition(x => x.UserId == id, trackChanges)
-                .Include(a => a.Address)
                 .Include(p => p.Products)
                     .ThenInclude(p => p.Product)
                 .ToListAsync();
@@ -25,7 +24,6 @@ namespace Repository.Repositories.Concretes
         public async Task<Order?> GetOneOrderAsync(int id, bool trackChanges)
         {
             var order  = await GetByCondition(x => x.Id == id,trackChanges)
-            .Include(a => a.Address)
             .Include(p => p.Products)
                 .ThenInclude(p => p.Product)
             .SingleOrDefaultAsync();

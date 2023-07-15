@@ -77,24 +77,24 @@ namespace Service.Concrates
             return categoryDto;
         }
 
+        public async Task UpdateOneCategoryAsync(CategoryDto categoryDto, bool trackChanges)
+        {
+            var category = await GetOneCategoryByIdCheckExistAsync(categoryDto.Id, trackChanges);
+
+            category = _mapper.Map(categoryDto, category);
+            _repository.CategoryRepository.Update(category);
+
+            _logger.LogInfo($"Category updated with id: {categoryDto.Id}");
+
+            await _repository.SaveAsync();
+        }
+
         public async Task DeleteOneCategoryAsync(int id, bool trackChanges)
         {
             var category = await GetOneCategoryByIdCheckExistAsync(id, trackChanges);
 
             _repository.CategoryRepository.Delete(category);
             _logger.LogInfo($"Category deleted {category.Id}");
-
-            await _repository.SaveAsync();
-        }
-
-        public async Task UpdateOneCategoryAsync(int id, CategoryDto categoryDto, bool trackChanges)
-        {
-            var category = await GetOneCategoryByIdCheckExistAsync(id, trackChanges);
-
-            category = _mapper.Map(categoryDto, category);
-            _repository.CategoryRepository.Update(category);
-
-            _logger.LogInfo($"Category updated with id: {id}");
 
             await _repository.SaveAsync();
         }

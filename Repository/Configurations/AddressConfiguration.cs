@@ -16,10 +16,6 @@ namespace Repository.Configurations
             builder.HasOne(x => x.User)
                    .WithOne(x => x.Address)
                    .HasForeignKey<Address>(x => x.UserId);
-
-            builder.HasOne(x => x.Order)
-                .WithOne(x => x.Address)
-                .HasForeignKey<Address>(x => x.UserId);
         }
     }
 }

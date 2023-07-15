@@ -15,7 +15,7 @@ namespace Repository.Configurations
                    .WithMany(x => x.Baskets)
                    .HasForeignKey(x => x.ProductId);
 
-            builder.HasOne(x => x.Basket)
+            builder.HasOne(x => x.Cart)
                    .WithMany(x => x.Products)
                    .HasForeignKey(x => x.BasketId);
         }

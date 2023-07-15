@@ -10,11 +10,9 @@ namespace Entity.Dtos.OrderDtos
         public int Id { get; init; }
         public int UserId { get; init; }
         public DateTime OrderDate { get; init; }
-        public int AddressId { get; init; }
         public decimal TotalAmount { get; init; }
         public bool PaymentStatus { get; init; }
         public bool DeliveryStatus { get; init; }
-        public AddressDto Address { get; init; }
         public ICollection<ProductOrderDto> Products { get; init; }
     }
 }

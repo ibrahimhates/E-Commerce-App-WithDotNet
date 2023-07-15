@@ -9,7 +9,7 @@ namespace Service.Abstracts
         Task<CategoryDto> GetOneCategoryByIdAsync(int id, bool trackChanges);
         Task<CategoryDetailDto> GetOneCategoryByIdWithProductAsync(int id, bool trackChanges);
         Task<CategoryDto> CreateOneCategoryAsync(CategoryDto categoryDto);
-        Task UpdateOneCategoryAsync(int id, CategoryDto categoryDto, bool trackChanges);
+        Task UpdateOneCategoryAsync(CategoryDto categoryDto, bool trackChanges);
         Task DeleteOneCategoryAsync(int id, bool trackChanges);
     }
 }

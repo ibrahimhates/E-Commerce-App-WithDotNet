@@ -15,7 +15,6 @@ namespace Repository.SeedData
                 new Order 
                 { 
                     Id = 1,
-                    AddressId = 1,
                     UserId = 1,
                     DeliveryStatus = false,
                     PaymentStatus = false,
@@ -25,7 +24,6 @@ namespace Repository.SeedData
                 new Order 
                 { 
                     Id = 2,
-                    AddressId = 2,
                     UserId = 2,
                     DeliveryStatus = false,
                     PaymentStatus = true,
@@ -35,7 +33,6 @@ namespace Repository.SeedData
                 new Order
                 {
                     Id = 3,
-                    AddressId = 2,
                     UserId = 2,
                     DeliveryStatus = true,
                     PaymentStatus = true,

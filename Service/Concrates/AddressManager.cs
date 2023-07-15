@@ -42,6 +42,16 @@ namespace Service.Concrates
         {
             var address = _mapper.Map<Address>(addressDto);
 
+            var exist = await _repository
+                .AddressRepository
+                .AnyAsync(x => x.UserId == addressDto.UserId);
+
+            if(exist)
+            {
+                _logger.LogInfo($"Address already exists with userId:{address.UserId}");
+                throw new AddressBadRequestException(address.UserId);
+            }
+
             await _repository
                 .AddressRepository
                 .CreateAsync(address);
@@ -52,17 +62,17 @@ namespace Service.Concrates
 
             return _mapper.Map<AddressDto>(address);
         }
-        public async Task UpdateAddress(int id, AddressDto addressDto, bool trackChanges)
+        public async Task UpdateAddressAsync(AddressDto addressDto, bool trackChanges)
         {
-            var address = await GetAddressCheckExistAsync(id, trackChanges);
+            var address = await GetAddressCheckExistAsync(addressDto.UserId, trackChanges);
 
             address = _mapper.Map(addressDto, address);
             _repository.AddressRepository.Update(address);
             await _repository.SaveAsync();
 
-            _logger.LogInfo($"Address updated with userid: {id}");
+            _logger.LogInfo($"Address updated with userid: {addressDto.UserId}");
         }
-        public async Task DeleteAddress(int id, bool trackChanges)
+        public async Task DeleteAddressAsync(int id, bool trackChanges)
         {
             var address = await GetAddressCheckExistAsync(id, trackChanges);
 

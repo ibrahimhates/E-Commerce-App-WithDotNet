@@ -7,7 +7,7 @@ namespace Service.Abstracts
     {
         Task<AddressDto> GetAddressAsync(int id, bool trackChanges);
         Task<AddressDto> CreatedAddressAsync(AddressDto addressDto);
-        Task DeleteAddress(int id, bool trackChanges);
-        Task UpdateAddress(int id,AddressDto addressDto,bool trackChanges);
+        Task DeleteAddressAsync(int id, bool trackChanges);
+        Task UpdateAddressAsync(AddressDto addressDto,bool trackChanges);
     }
 }

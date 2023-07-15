@@ -50,6 +50,7 @@ namespace Presentation.Controllers
             return Ok(product);
         }
 
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost("create/")]
         public async Task<IActionResult> CreateOneProduct([FromBody] ProductInsertionDto productInsertionDto)
         {
@@ -58,6 +59,7 @@ namespace Presentation.Controllers
             return StatusCode(201, product);
         }
 
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut("update/")]
         public async Task<IActionResult> UpdateOneProduct(
             [FromBody] ProductUpdateDto productUpdateDto)

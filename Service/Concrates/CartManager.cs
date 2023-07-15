@@ -47,42 +47,52 @@ namespace Service.Concrates
                 .CartRepository
                 .AnyAsync(x => x.UserId == userId);
 
+            var cart = new Cart()
+            {
+                UserId = userId,
+                Total = 0,
+            };
+            
             if (!isExist)
             {
-                await _repository
-                    .CartRepository
-                    .CreateAsync(new Cart()
-                    {
-                        UserId = userId,
-                        Total = 0,
-                    });
+                await _repository.CartRepository.CreateAsync(cart);
                 await _repository.SaveAsync();
+
                 _logger.LogInfo($"Cart created with userId:{userId}");
+            }
+
+            var productCart = new ProductCart()
+            {
+                BasketId = userId,
+                ProductId = productId
+            };
+
+            var price = await _repository
+                .ProductRepository
+                .GetByCondition(p => p.Id == productId, false)
+                .Select(p => p.Price)
+                .FirstOrDefaultAsync();
+
+            cart = await _repository
+                .CartRepository
+                .GetCartAsync(userId, true);
+
+            if (cart.Products.Any(x => x.ProductId == productId && x.BasketId == userId))
+            {
+                _logger.LogWarning($"The Product already exist in cart id:{userId}");
+                throw new CartBadRequestException(userId);
             }
 
             await _repository
                 .ProductBasketRepository
-                .CreateAsync(new ProductCart()
-                {
-                    BasketId = userId,
-                    ProductId = productId
-                });
-
-            var price = await _repository
-                .ProductRepository
-                .GetByCondition(p => p.Id == productId, false).Select(p => p.Price)
-                .FirstOrDefaultAsync();
-
-            var cart = await _repository
-                .CartRepository
-                .GetCartAsync(userId, false);
+                .CreateAsync(productCart);
 
             cart.Total += price;
-
             _repository.CartRepository.Update(cart);
-            await _repository.SaveAsync();
-            _logger.LogInfo($"The product added in cart");
 
+            await _repository.SaveAsync();
+
+            _logger.LogInfo($"The product added in cart");
         }
 
         public async Task RemoveProductToCart(int userId, int productId)
@@ -97,12 +107,11 @@ namespace Service.Concrates
                 throw new CartNotFoundException();
             }
 
-            var productInCart = await _repository
-                .ProductBasketRepository
-                .GetByCondition(x => x.BasketId == userId && x.ProductId == productId, false)
-                .FirstOrDefaultAsync();
+            var productInCart = cart.Products
+                .Where(p => p.ProductId == productId)
+                .FirstOrDefault();
 
-            if(productInCart is null )
+            if (productInCart is null )
             {
                 _logger.LogWarning($"The product not found in cart with id:{userId}");
                 throw new ProductNotFoundException(productId);
@@ -115,15 +124,17 @@ namespace Service.Concrates
                 .FirstOrDefaultAsync();
 
             cart.Total -= price;
-            cart.Products.Remove(productInCart);
+            var result  = cart.Products.Remove(productInCart);
 
-            if(cart.Products.Count == 0)
+            if (cart.Products.Count == 0)
                 _repository.CartRepository.Delete(cart);
             else
                 _repository.CartRepository.Update(cart);
 
             _repository.ProductBasketRepository.Delete(productInCart);
+
             await _repository.SaveAsync();
+
         }
     }
 }

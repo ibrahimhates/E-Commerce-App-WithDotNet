@@ -63,7 +63,6 @@ namespace Service.Concrates
             var orderDate = DateTime.Now;
             var order = new Order()
             {
-                AddressId = userId,
                 DeliveryStatus = false,
                 PaymentStatus = false,
                 TotalAmount = cart.Total,
@@ -82,25 +81,30 @@ namespace Service.Concrates
                 .Select(x => x.Id)
                 .FirstOrDefaultAsync();
 
-            await _repository.ProductOrderRepository.CreateRangeAsync(CreateProductofOrder(cart, orderId));
+            await _repository
+                .ProductOrderRepository
+                .CreateRangeAsync(CreateProductofOrder(cart, orderId));
+
             await _repository.SaveAsync();
 
-            var createdOrder = await _repository.OrderRepository.GetOneOrderAsync(orderId,false);
+            var createdOrder = await _repository
+                .OrderRepository
+                .GetOneOrderAsync(orderId,false);
 
             _logger.LogInfo($"Created new Order and deleted cart with userId:{userId}");
 
             return _mapper.Map<OrderDto>(createdOrder);
         }
-        public async Task UpdateOrderAsync(int id, OrderUpdateDto orderUpdateDto, bool trackChanges)
+        public async Task UpdateOrderAsync(OrderUpdateDto orderUpdateDto, bool trackChanges)
         {
-            var order = await GetOneOrderCheckExistAsync(id, trackChanges);
+            var order = await GetOneOrderCheckExistAsync(orderUpdateDto.Id, trackChanges);
 
             order = _mapper.Map(orderUpdateDto, order);
 
             _repository.OrderRepository.Update(order);
             await _repository.SaveAsync();
             
-            _logger.LogInfo($"Updated order: id : {id}");
+            _logger.LogInfo($"Updated order: id : {orderUpdateDto.Id}");
         }
         public async Task DeleteOrderAsync(int id, bool trackChanges)
         {

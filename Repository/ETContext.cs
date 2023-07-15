@@ -15,10 +15,10 @@ namespace Repository
 
         DbSet<Product> Products { get; set; }
         DbSet<Category> Categories { get; set; }
-        DbSet<Cart> Baskets { get; set; }
+        DbSet<Cart> Carts { get; set; }
         DbSet<Order> Orders { get; set; }
         DbSet<Address> Addresses { get; set; }
-        DbSet<ProductCart> ProductBaskets { get; set; }
+        DbSet<ProductCart> ProductCarts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

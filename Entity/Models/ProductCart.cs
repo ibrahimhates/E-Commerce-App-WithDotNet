@@ -6,6 +6,6 @@ namespace Entity.Models
         public int ProductId { get; set; }
         public int BasketId { get; set; }
         public Product Product { get; set; }
-        public Cart Basket { get; set; }
+        public Cart Cart { get; set; }
     }
 }

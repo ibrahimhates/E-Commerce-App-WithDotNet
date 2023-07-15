@@ -9,6 +9,6 @@ namespace Entity.Dtos.ProdcutCartDtos
         public int ProductId { get; init; }
         public int BasketId { get; init; }
         public ProductDto Product { get; init; }
-        public CartDto Basket { get; init; }
+        public CartDto Cart { get; init; }
     }
 }

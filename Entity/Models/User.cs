@@ -9,7 +9,7 @@ namespace Entity.Models
         public string LastName { get; set; }
         public DateTime CreatedDate { get; set; }
         public Address? Address { get; set; }
-        public Cart Basket { get; set; }
+        public Cart Cart { get; set; }
         public ICollection<Order> Orders { get; set; }
     }
 }

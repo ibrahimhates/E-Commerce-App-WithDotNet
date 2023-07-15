@@ -15,7 +15,7 @@ namespace Repository.Configurations
             builder.Property(x => x.Total).HasColumnType("decimal(18,4)");
 
             builder.HasOne(x => x.User)
-                   .WithOne(x => x.Basket)
+                   .WithOne(x => x.Cart)
                    .HasForeignKey<Cart>(x => x.UserId);
         }
     }
