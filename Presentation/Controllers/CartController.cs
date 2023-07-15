@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Presentation.ActionFilter;
+using Service;
 using Service.Abstracts;
 
 namespace Presentation.Controllers
 {
+    [Authorize]
     [ServiceFilter(typeof(LogFilterAttribute))]
     [ApiController]
     [Route("api/[controller]s")]
@@ -16,27 +19,28 @@ namespace Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetCart(int id)
+        public async Task<IActionResult> GetCart()
         {
-            var cart = await _cartService.GetCartAsync(id, false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var cart = await _cartService.GetCartAsync(userId, false);
 
             return Ok(cart);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProductToCart([FromQuery] int id,
-            [FromQuery] int productId)
+        public async Task<IActionResult> AddProductToCart([FromQuery] int productId)
         {
-            await _cartService.AddProductToCart(id, productId);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            await _cartService.AddProductToCart(userId, productId);
 
             return NoContent();
         }
 
         [HttpDelete]
-        public async Task<IActionResult> RemoveProductToCart([FromQuery] int id,
-            [FromQuery] int productId)
+        public async Task<IActionResult> RemoveProductToCart([FromQuery] int productId)
         {
-            await _cartService.RemoveProductToCart(id, productId);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            await _cartService.RemoveProductToCart(userId, productId);
 
             return NoContent();
         }

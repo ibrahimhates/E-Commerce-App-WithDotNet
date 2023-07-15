@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Entity.Dtos.AddressDtos
 {
-    public record AddressDto : AddressInsertionDto
+    public record AddressInsertionDto
     {
-        public int UserId { get; init; }
+        public string AddressName { get; init; }
     }
 }

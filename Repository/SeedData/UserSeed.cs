@@ -30,6 +30,7 @@ namespace Repository.SeedData
                     EmailConfirmed = true,
                     SecurityStamp = Guid.NewGuid().ToString(),
                     CreatedDate = DateTime.Now,
+                    
                 },
                 new User 
                 {

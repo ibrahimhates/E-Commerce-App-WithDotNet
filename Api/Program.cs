@@ -22,6 +22,7 @@ builder.Services.ConfigureIdentity();
 builder.Services.ConfigureRepositoriesInjection();
 builder.Services.ConfigureLoggerService();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.ConfigureServiceInjection();
 builder.Services.ConfigureAuthServiceInjection();
 builder.Services.ConfigureActionFilter();
@@ -42,6 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

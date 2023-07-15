@@ -1,5 +1,6 @@
 ﻿using Entity.Dtos.ProductDtos;
 using Entity.RequestFeatures;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ActionFilter;
 using Service.Abstracts;
@@ -19,6 +20,7 @@ namespace Presentation.Controllers
             _productService=productService;
         }
 
+        [Authorize]
         [HttpGet("all/")]
         public async Task<IActionResult> GetAllProduct([FromQuery] ProductParams productParams)
         {
@@ -30,6 +32,7 @@ namespace Presentation.Controllers
             return Ok(result.productDtos);
         }
 
+        [Authorize]
         [HttpGet("allByCategory/{id:int}/")]
         public async Task<IActionResult> GetAllProductByCategoryId([FromRoute(Name = "id")] int id, [FromQuery] ProductParams productParams)
         {
@@ -42,6 +45,7 @@ namespace Presentation.Controllers
             return Ok(result.productDtos);
         }
 
+        [Authorize]
         [HttpGet("one/{id:int}")]
         public async Task<IActionResult> GetOneProduct([FromRoute(Name = "id")] int id)
         {
@@ -50,6 +54,7 @@ namespace Presentation.Controllers
             return Ok(product);
         }
 
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost("create/")]
         public async Task<IActionResult> CreateOneProduct([FromBody] ProductInsertionDto productInsertionDto)
@@ -59,6 +64,7 @@ namespace Presentation.Controllers
             return StatusCode(201, product);
         }
 
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut("update/")]
         public async Task<IActionResult> UpdateOneProduct(
@@ -69,6 +75,7 @@ namespace Presentation.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("delete/{id:int}")]
         public async Task<IActionResult> DeleteOneProduct([FromRoute(Name = "id")] int id)
         {

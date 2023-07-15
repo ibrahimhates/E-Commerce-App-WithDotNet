@@ -1,6 +1,8 @@
 ﻿using Entity.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Presentation.ActionFilter;
 using Repository;
 using Repository.Repositories;
@@ -14,6 +16,7 @@ using Service.Concrates;
 using Service.Concrates.Auth;
 using Service.Concrates.LoggerConcrate;
 using System.Reflection;
+using System.Text;
 
 namespace Api.Extensions
 {
@@ -75,6 +78,36 @@ namespace Api.Extensions
         {
             services.AddSingleton<LogFilterAttribute>();
             services.AddSingleton<ValidationFilterAttribute>();
+        }
+
+        public static void ConfigureJWT(this IServiceCollection services,
+            IConfiguration configuration)
+        {
+            var jwtSettings = configuration.GetSection("JwtSettings");
+            var secretKey = jwtSettings["secretKey"];
+
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = jwtSettings["validIssuer"],
+                ValidAudience = jwtSettings["validAudience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+            };
+
+            services.AddSingleton(tokenValidationParameters);
+
+            services.AddAuthentication(opt =>
+            {
+                opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(options =>
+                    options.TokenValidationParameters = tokenValidationParameters
+                );
+
         }
     }
 }

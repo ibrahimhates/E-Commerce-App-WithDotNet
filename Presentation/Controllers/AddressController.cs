@@ -1,11 +1,14 @@
 ﻿
 using Entity.Dtos.AddressDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ActionFilter;
+using Service;
 using Service.Abstracts;
 
 namespace Presentation.Controllers
 {
+    [Authorize]
     [ServiceFilter(typeof(LogFilterAttribute))]
     [ApiController]
     [Route("api/[controller]s")]
@@ -17,36 +20,45 @@ namespace Presentation.Controllers
             _addressService=addressService;
         }
 
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetAddress([FromRoute(Name = "id")]int id)
+        [HttpGet]
+        public async Task<IActionResult> GetAddress()
         {
-            var address = await _addressService.GetAddressAsync(id,false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var address = await _addressService.GetAddressAsync(userId, false);
 
             return Ok(address);
         }
 
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost]
-        public async Task<IActionResult> CreateAddress([FromBody]AddressDto addressDto)
+        public async Task<IActionResult> CreateAddress([FromBody] AddressInsertionDto addressIDto)
         {
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var addressDto =
+                new AddressDto() { UserId = userId, AddressName = addressIDto.AddressName };
             var address = await _addressService.CreatedAddressAsync(addressDto);
 
-            return StatusCode(201,address);
+            return StatusCode(201, address);
         }
 
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut]
-        public async Task<IActionResult> UpdateAddress([FromBody]AddressDto addressDto)
+        public async Task<IActionResult> UpdateAddress([FromBody] AddressInsertionDto addressIDto)
         {
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var addressDto =
+                new AddressDto() { UserId = userId, AddressName = addressIDto.AddressName };
+
             await _addressService.UpdateAddressAsync(addressDto, false);
-            
+
             return NoContent();
         }
 
-        [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteAddress([FromRoute(Name = "id")]int id)
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAddress()
         {
-            await _addressService.DeleteAddressAsync(id,false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            await _addressService.DeleteAddressAsync(userId,false);
 
             return NoContent();
         }

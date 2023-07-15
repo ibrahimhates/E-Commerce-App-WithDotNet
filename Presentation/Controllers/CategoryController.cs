@@ -1,4 +1,5 @@
 ﻿using Entity.Dtos.CategoryDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ActionFilter;
 using Service.Abstracts;
@@ -16,6 +17,7 @@ namespace Presentation.Controllers
             _categoryService=categoryService;
         }
 
+        [Authorize]
         [HttpGet("all/")]
         public async Task<ActionResult> GetAllCategories()
         {
@@ -24,6 +26,7 @@ namespace Presentation.Controllers
             return Ok(categories);
         }
 
+        [Authorize]
         [HttpGet("one/{id:int}/")]
         public async Task<IActionResult> GetOneCategoryById([FromRoute(Name = "id")]int id)
         {
@@ -32,6 +35,7 @@ namespace Presentation.Controllers
             return Ok(category);
         }
 
+        [Authorize]
         [HttpGet("oneDetail/{id:int}/")]
         public async Task<IActionResult> GetOneCategoryByIdWithProduct([FromRoute(Name = "id")]int id)
         {
@@ -40,6 +44,7 @@ namespace Presentation.Controllers
             return Ok(category);
         }
 
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPost("create/")]
         public async Task<IActionResult> CreateOneCategory([FromBody]CategoryDto categoryDto)
@@ -49,6 +54,7 @@ namespace Presentation.Controllers
             return StatusCode(201,category);
         }
 
+        [Authorize(Roles = "Admin")]
         [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut("update/")]
         public async Task<IActionResult> UpdateOneCategory([FromBody]CategoryDto categoryDto)
@@ -58,6 +64,7 @@ namespace Presentation.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("delete/{id:int}")] 
         public async Task<IActionResult> DeleteOneCategory([FromRoute(Name = "id")]int id)
         {

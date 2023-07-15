@@ -1,11 +1,14 @@
 ﻿
 using Entity.Dtos.OrderDtos;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Presentation.ActionFilter;
+using Service;
 using Service.Abstracts;
 
 namespace Presentation.Controllers
 {
+    [Authorize]
     [ServiceFilter(typeof(LogFilterAttribute))]
     [ApiController]
     [Route("api/[controller]s")]
@@ -18,10 +21,11 @@ namespace Presentation.Controllers
             _orderService=orderService;
         }
 
-        [HttpGet("all/{id:int}/")]
-        public async Task<ActionResult> GetAllOrder([FromRoute(Name = "id")]int id)
+        [HttpGet("all/")]
+        public async Task<ActionResult> GetAllOrder()
         {
-            var orders = await _orderService.GetAllOrderAsync(id, false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var orders = await _orderService.GetAllOrderAsync(userId, false);
 
             return Ok(orders);
         }
@@ -34,10 +38,11 @@ namespace Presentation.Controllers
             return Ok(order);
         }
 
-        [HttpPost("create/{id:int}")]
-        public async Task<IActionResult> CreateOrder([FromRoute(Name = "id")]int id)
+        [HttpPost("create/")]
+        public async Task<IActionResult> CreateOrder()
         {
-            var order = await _orderService.CreateOrderAsync(id);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var order = await _orderService.CreateOrderAsync(userId);
             
             return StatusCode(201,order);
         }
