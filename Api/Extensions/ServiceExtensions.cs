@@ -109,5 +109,17 @@ namespace Api.Extensions
                 );
 
         }
+
+        public static void ConfigureCorsPolicy(this IServiceCollection services)
+        {
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("EcommerceCorsPolicy", builder =>
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders("Pagination-Detail"));
+            });
+        }
     }
 }

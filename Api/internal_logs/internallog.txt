@@ -305,3 +305,23 @@
 2023-07-15 19:47:02.7704 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
 2023-07-15 19:50:59.1753 Info AppDomain Shutting down. LogFactory closing...
 2023-07-15 19:50:59.1891 Info LogFactory has been closed.
+2023-07-16 15:18:22.6644 Info Message Template Auto Format enabled
+2023-07-16 15:18:22.7099 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-16 15:18:22.7196 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\atesi\Desktop\Staj Projeleri\E-TicaretApp\E_Ticaret_App\Api\bin\Debug\net7.0\NLog.config
+2023-07-16 15:18:22.7196 Info Configuration initialized.
+2023-07-16 15:18:22.7196 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-16 15:20:31.2602 Info Message Template Auto Format enabled
+2023-07-16 15:20:31.2981 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-16 15:20:31.2981 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\atesi\Desktop\Staj Projeleri\E-TicaretApp\E_Ticaret_App\Api\bin\Debug\net7.0\NLog.config
+2023-07-16 15:20:31.3149 Info Configuration initialized.
+2023-07-16 15:20:31.3149 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-16 15:45:09.8197 Info Message Template Auto Format enabled
+2023-07-16 15:45:09.8695 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-16 15:45:09.8871 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\atesi\Desktop\Staj Projeleri\E-TicaretApp\E_Ticaret_App\Api\bin\Debug\net7.0\NLog.config
+2023-07-16 15:45:09.8980 Info Configuration initialized.
+2023-07-16 15:45:09.8980 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False
+2023-07-16 16:23:22.8234 Info Message Template Auto Format enabled
+2023-07-16 16:23:22.8776 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2023-07-16 16:23:22.9018 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\atesi\Desktop\Staj Projeleri\E-TicaretApp\E_Ticaret_App\Api\bin\Debug\net7.0\NLog.config
+2023-07-16 16:23:22.9151 Info Configuration initialized.
+2023-07-16 16:23:22.9260 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.2.1914. Product version: 5.2.2+51cc02a2dd780a9a01eb6747de52071d78e2f506. GlobalAssemblyCache: False

@@ -21,9 +21,9 @@ namespace Repository.Repositories.Concretes
             return orders;
         }
 
-        public async Task<Order?> GetOneOrderAsync(int id, bool trackChanges)
+        public async Task<Order?> GetOneOrderAsync(int userId, int id, bool trackChanges)
         {
-            var order  = await GetByCondition(x => x.Id == id,trackChanges)
+            var order  = await GetByCondition(x => x.Id == id && x.UserId == userId,trackChanges)
             .Include(p => p.Products)
                 .ThenInclude(p => p.Product)
             .SingleOrDefaultAsync();

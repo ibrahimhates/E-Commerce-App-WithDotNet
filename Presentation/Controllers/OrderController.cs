@@ -33,7 +33,8 @@ namespace Presentation.Controllers
         [HttpGet("one/{id:int}/")]
         public async Task<IActionResult> GetOneOrderById([FromRoute(Name = "id")]int id)
         {
-            var order = await _orderService.GetOneOrderByIdAsync(id, false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            var order = await _orderService.GetOneOrderByIdAsync(userId,id, false);
 
             return Ok(order);
         }
@@ -50,7 +51,8 @@ namespace Presentation.Controllers
         [HttpPut("update/")]
         public async Task<IActionResult> UpdateOrder([FromBody]OrderUpdateDto orderUpdateDto)
         {
-            await _orderService.UpdateOrderAsync(orderUpdateDto,false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            await _orderService.UpdateOrderAsync(userId, orderUpdateDto,false);
 
             return NoContent();
         }
@@ -58,7 +60,8 @@ namespace Presentation.Controllers
         [HttpDelete("delete/{id:int}")]
         public async Task<IActionResult> DeleteOrder([FromRoute(Name = "id")]int id)
         {
-            await _orderService.DeleteOrderAsync(id, false);
+            var userId = TokenHelper.GetUserIdFromToken(HttpContext.User);
+            await _orderService.DeleteOrderAsync(userId, id, false);
 
             return NoContent();
         }

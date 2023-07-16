@@ -76,7 +76,7 @@ namespace Presentation.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpDelete("delete/{id:int}")]
+        [HttpDelete("delete/{id:int}/")]
         public async Task<IActionResult> DeleteOneProduct([FromRoute(Name = "id")] int id)
         {
             await _productService.DeleteOneProductAsync(id, false);

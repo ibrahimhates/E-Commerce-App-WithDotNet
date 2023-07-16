@@ -26,7 +26,7 @@ builder.Services.ConfigureJWT(builder.Configuration);
 builder.Services.ConfigureServiceInjection();
 builder.Services.ConfigureAuthServiceInjection();
 builder.Services.ConfigureActionFilter();
-
+builder.Services.ConfigureCorsPolicy();
 
 var app = builder.Build();
 
@@ -43,6 +43,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors("Pagination-Detail");
 app.UseAuthentication();
 app.UseAuthorization();
 

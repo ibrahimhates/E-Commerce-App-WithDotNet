@@ -1,5 +1,4 @@
-﻿
-using AutoMapper;
+﻿using AutoMapper;
 using Entity.Dtos.OrderDtos;
 using Entity.Exceptions.Cart;
 using Entity.Exceptions.Order;
@@ -38,9 +37,9 @@ namespace Service.Concrates
 
             return orderDtos;
         }
-        public async Task<OrderDto> GetOneOrderByIdAsync(int orderId, bool trackChanges)
+        public async Task<OrderDto> GetOneOrderByIdAsync(int userId, int orderId, bool trackChanges)
         {
-            var order = await GetOneOrderCheckExistAsync(orderId, trackChanges);
+            var order = await GetOneOrderCheckExistAsync(userId,orderId, trackChanges);
 
             var orderDto = _mapper.Map<OrderDto>(order);
 
@@ -89,15 +88,15 @@ namespace Service.Concrates
 
             var createdOrder = await _repository
                 .OrderRepository
-                .GetOneOrderAsync(orderId,false);
+                .GetOneOrderAsync(userId, orderId,false);
 
             _logger.LogInfo($"Created new Order and deleted cart with userId:{userId}");
 
             return _mapper.Map<OrderDto>(createdOrder);
         }
-        public async Task UpdateOrderAsync(OrderUpdateDto orderUpdateDto, bool trackChanges)
+        public async Task UpdateOrderAsync(int userId,OrderUpdateDto orderUpdateDto, bool trackChanges)
         {
-            var order = await GetOneOrderCheckExistAsync(orderUpdateDto.Id, trackChanges);
+            var order = await GetOneOrderCheckExistAsync(userId,orderUpdateDto.Id, trackChanges);
 
             order = _mapper.Map(orderUpdateDto, order);
 
@@ -106,9 +105,9 @@ namespace Service.Concrates
             
             _logger.LogInfo($"Updated order: id : {orderUpdateDto.Id}");
         }
-        public async Task DeleteOrderAsync(int id, bool trackChanges)
+        public async Task DeleteOrderAsync(int userId,int id, bool trackChanges)
         {
-            var order = await GetOneOrderCheckExistAsync(id, trackChanges);
+            var order = await GetOneOrderCheckExistAsync(userId, id, trackChanges);
 
             _repository.OrderRepository.Delete(order);
             await _repository.SaveAsync();
@@ -116,11 +115,11 @@ namespace Service.Concrates
             _logger.LogInfo($"Deleted Order with id:{order.Id}");
         }
 
-        private async Task<Order> GetOneOrderCheckExistAsync(int orderId, bool trackChanges)
+        private async Task<Order> GetOneOrderCheckExistAsync(int userId, int orderId, bool trackChanges)
         {
             var order = await _repository
                 .OrderRepository
-                .GetOneOrderAsync(orderId, trackChanges);
+                .GetOneOrderAsync(userId,orderId, trackChanges);
 
             if(order is null)
             {

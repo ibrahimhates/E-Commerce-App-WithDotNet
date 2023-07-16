@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Entity.Dtos.AddressDtos;
+using Entity.Dtos.AuthDtos;
 using Entity.Dtos.CartDtos;
 using Entity.Dtos.CategoryDtos;
 using Entity.Dtos.OrderDtos;
@@ -31,6 +32,8 @@ namespace Api.AutoMapper
             CreateMap<ProductOrderDto, ProductOrder>().ReverseMap();
 
             CreateMap<ProductCartDto, ProductCart>().ReverseMap();
+
+            CreateMap<UserForRegistrationDto, User>();
         }
     }
 }
