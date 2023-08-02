@@ -44,7 +44,6 @@ namespace Repository.Repositories.Concretes
             var count = await
                 GetAll(false)
                 .Search(productParams.SearchTerm)
-                .Sort(productParams.OrderBy)
                 .CountAsync();
 
             return count;
@@ -56,7 +55,6 @@ namespace Repository.Repositories.Concretes
                 GetAll(false)
                 .Where(x => x.CategoryId == id)
                 .Search(productParams.SearchTerm)
-                .Sort(productParams.OrderBy)
                 .CountAsync();
 
             return count;
