@@ -20,7 +20,7 @@ namespace Presentation.Controllers
             _productService=productService;
         }
 
-        [Authorize]
+       // [Authorize]
         [HttpGet("all/")]
         public async Task<IActionResult> GetAllProduct([FromQuery] ProductParams productParams)
         {

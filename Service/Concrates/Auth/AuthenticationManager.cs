@@ -93,6 +93,7 @@ namespace Service.Concrates.Auth
             };
 
             var roles = await _userManager.GetRolesAsync(_user);
+            var claim = await _userManager.GetClaimsAsync(_user);
 
             foreach (var role in roles)
             {
